@@ -2,7 +2,8 @@ import sys
 
 from PIL import Image, ImageFont, ImageDraw
 
-i = str(sys.argv[0])
+i = str(sys.argv[1])
+print(i)
 image_list = []
 with open('txt/file0' + i + '.txt') as f:
     lines = [line.rstrip('\n') for line in f]
