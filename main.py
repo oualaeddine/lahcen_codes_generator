@@ -1,8 +1,10 @@
+import sys
+
 from PIL import Image, ImageFont, ImageDraw
 
-i="2"
+i = str(sys.argv[0])
 image_list = []
-with open('txt/file0'+i+'.txt') as f:
+with open('txt/file0' + i + '.txt') as f:
     lines = [line.rstrip('\n') for line in f]
 
     counter = 0
@@ -17,5 +19,6 @@ with open('txt/file0'+i+'.txt') as f:
         image_list.append(im_x)
         counter = counter + 1
         if counter % 50 == 0:
-            my_image.save('result_pdf/' +i+'_'+ str(counter) + '_my_images.pdf', save_all=True, append_images=image_list)
+            my_image.save('result_pdf/' + i + '_' + str(counter) + '_my_images.pdf', save_all=True,
+                          append_images=image_list)
             print("generated : " + str(counter - 50) + "-" + str(counter))
